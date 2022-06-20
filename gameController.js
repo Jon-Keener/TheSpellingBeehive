@@ -10,7 +10,7 @@ function startGame() { // 15 rows and 15 columns
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'a', 'b', 'c', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
@@ -78,7 +78,9 @@ function loadPiece(piece, position) {
 
 function getPieceImageSource(piece) {
     switch (piece) {
-        case 'a': return 'assets/bx1.png';
+        case 'a': return 'assets/A.png';
+        case 'b': return 'assets/B.png';
+        case 'c': return 'assets/C.png';
         case 'R': return 'assets/black_rook.png';
         case 'N': return 'assets/black_knight.png';
         case 'B': return 'assets/black_bishop.png';
