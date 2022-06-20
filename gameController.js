@@ -7,12 +7,12 @@ let curHeldPieceStartingPosition;
 function startGame() { // 15 rows and 15 columns
     const starterPosition = [
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'a', 'b', 'c', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
-    ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', '.', '.', 'e', '.', '.', '.', 'n', 'g', '.', '.', '.', '.', '.' ],
+    ['.', '.', 't', 'h', '.', '.', 'l', 'i', '.', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', '.', '.', 'e', 'l', '.', '.', 'e', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', 's', 'p', '.', '.', 'i', 'v', '.', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', '.', '.', 'e', 'h', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
+    ['.', '.', 'b', 'e', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' ],
@@ -81,18 +81,29 @@ function getPieceImageSource(piece) {
         case 'a': return 'assets/A.png';
         case 'b': return 'assets/B.png';
         case 'c': return 'assets/C.png';
-        case 'R': return 'assets/black_rook.png';
-        case 'N': return 'assets/black_knight.png';
-        case 'B': return 'assets/black_bishop.png';
-        case 'Q': return 'assets/black_queen.png';
-        case 'K': return 'assets/black_king.png';
-        case 'P': return 'assets/black_pawn.png';
-        case 'r': return 'assets/white_rook.png';
-        case 'n': return 'assets/white_knight.png';
-        case 'b': return 'assets/white_bishop.png';
-        case 'q': return 'assets/white_queen.png';
-        case 'k': return 'assets/white_king.png';
-        case 'p': return 'assets/white_pawn.png';
+        case 'd': return 'assets/D.png';
+        case 'e': return 'assets/E.png';
+        case 'f': return 'assets/F.png';
+        case 'g': return 'assets/G.png';
+        case 'h': return 'assets/H.png';
+        case 'i': return 'assets/I.png';
+        case 'j': return 'assets/J.png';
+        case 'k': return 'assets/K.png';
+        case 'l': return 'assets/L.png';
+        case 'm': return 'assets/M.png';
+        case 'n': return 'assets/N.png';
+        case 'o': return 'assets/O.png';
+        case 'p': return 'assets/P.png';
+        case 'q': return 'assets/Q.png';
+        case 'r': return 'assets/R.png';
+        case 's': return 'assets/S.png';
+        case 't': return 'assets/T.png';
+        case 'u': return 'assets/U.png';
+        case 'v': return 'assets/V.png';
+        case 'w': return 'assets/W.png';
+        case 'x': return 'assets/X.png';
+        case 'y': return 'assets/Y.png';
+        case 'z': return 'assets/Z.png';
     }
 }
 
