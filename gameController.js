@@ -104,7 +104,8 @@ function getPieceImageSource(piece) {
         case 'x': return 'assets/X.png';
         case 'y': return 'assets/Y.png';
         case 'z': return 'assets/Z.png';
-        case 'R': return 'assets/red-rose.png';
+        /* case 'R': return 'assets/red-rose.png'; */
+        case 'R': return 'assets/single-red-rose-jlk.png';
     }
 }
 
