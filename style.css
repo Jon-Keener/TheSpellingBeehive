@@ -11,7 +11,7 @@ body {
     font: 400 14px Roboto, sans-serif;
     background: #f0f0f5;
     -webkit-font-smoothing: antialiased;
-    <h1 style="text-align:center">Straight6</h1>
+    <h1 style="text-align:center">The Spelling Beehive</h1>
 }
 
 input, button, textarea {
@@ -44,7 +44,7 @@ button {
 /* Indent the odd columns. */
 .column:nth-child(odd) {
     position: relative;
-    top: 25px;
+    top: 31px;
 }
 
 .square {
@@ -60,10 +60,10 @@ button {
     /* Flat Hexagon */
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
 
 }
 
@@ -80,10 +80,10 @@ button {
     /* Flat Hexagon */
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
 
 }
 
