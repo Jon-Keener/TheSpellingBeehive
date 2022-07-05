@@ -22,6 +22,26 @@ button {
     cursor: pointer;
 }
 
+.boards {
+    text-align: center;
+}
+
+.boardp1 {
+    border: 10px solid red;
+    border-radius: 6px;
+
+    text-align: center;
+    float: left;
+}
+
+.boardp2 {
+    border: 10px solid red;
+    border-radius: 6px;
+
+    text-align: center;
+    float: right;
+}
+
 .board {
     width: min-content;
     margin: 32px auto 0;
