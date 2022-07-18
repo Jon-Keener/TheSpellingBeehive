@@ -11,7 +11,7 @@ body {
     font: 400 14px Roboto, sans-serif;
     background: #f0f0f5;
     -webkit-font-smoothing: antialiased;
-    <h1 style="text-align:center">The Spelling Beehive</h1>
+    /* <h1 style="text-align:center">The Spelling Beehive</h1> */
 }
 
 input, button, textarea {
@@ -22,7 +22,7 @@ button {
     cursor: pointer;
 }
 
-// classes
+/* classes */
 
 .boards {
     display: inline;

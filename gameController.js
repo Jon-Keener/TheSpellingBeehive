@@ -24,16 +24,13 @@ function startGame() { // 15 columns and 15 rows: (0,0) - (14,14)
     ];
 
     // Initialize the letter tiles and the player racks.
-    var tiles = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E',
-                 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'I', 'I', 'I', 'I', 
-                 'I', 'I', 'I', 'I', 'I', 'J', 'K', 'L', 'L', 'L', 'L', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'N', 'O', 
-                 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'Q', 'R', 'R', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 
-                 'T', 'T', 'T', 'T', 'T', 'T', 'U', 'U', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'Y', 'Y', 'Z', ' ', ' '];
+    var tiles = ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e',
+                 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'g', 'g', 'g', 'h', 'h', 'i', 'i', 'i', 'i', 
+                 'i', 'i', 'i', 'i', 'i', 'j', 'k', 'l', 'l', 'l', 'l', 'm', 'm', 'n', 'n', 'n', 'n', 'n', 'n', 'o', 
+                 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'p', 'p', 'q', 'r', 'r', 'r', 'r', 'r', 'r', 's', 's', 's', 's', 
+                 't', 't', 't', 't', 't', 't', 'u', 'u', 'u', 'u', 'v', 'v', 'w', 'w', 'x', 'y', 'y', 'z', ' ', ' '];
     var p1rack = ['.', '.', '.', '.', '.', '.'];
     var p2rack = ['.', '.', '.', '.', '.', '.'];
-
-
-    // var tile = tiles[Math.floor(Math.random() * tiles.length)];
 
     // Populate the player racks by alternating the draws.
     for (let i = 0; i < p1rack.length; i++) {
@@ -46,24 +43,31 @@ function startGame() { // 15 columns and 15 rows: (0,0) - (14,14)
         p2rack[i] = tiles[j]; // Assign to P2 rack.
         tiles.splice(j, 1); // Delete from tiles.
     }
+
     console.log( 'p1rack: ', p1rack.sort() );
     console.log( 'p2rack: ', p2rack.sort() );
     console.log( 'tiles: ', tiles.sort() );
 
     const starterPlayer = 'white';
 
+    // Add P1 rack to starterPosition, unless undefined.
+    if (typeof p1rack[0] !== 'undefined') { starterPosition[0][0] = p1rack[0] } else { starterPosition[0][0] = '.' };
+    if (typeof p1rack[1] !== 'undefined') { starterPosition[0][1] = p1rack[1] } else { starterPosition[0][1] = '.' };
+    if (typeof p1rack[2] !== 'undefined') { starterPosition[1][0] = p1rack[2] } else { starterPosition[1][0] = '.' };
+    if (typeof p1rack[3] !== 'undefined') { starterPosition[1][1] = p1rack[3] } else { starterPosition[1][1] = '.' };
+    if (typeof p1rack[4] !== 'undefined') { starterPosition[0][2] = p1rack[4] } else { starterPosition[0][2] = '.' };
+    if (typeof p1rack[5] !== 'undefined') { starterPosition[0][3] = p1rack[5] } else { starterPosition[0][3] = '.' };
+
+    // Add P2 rack to starterPosition, unless undefined.
+    if (typeof p2rack[0] !== 'undefined') { starterPosition[14][11] = p2rack[0] } else { starterPosition[14][11] = '.' };
+    if (typeof p2rack[1] !== 'undefined') { starterPosition[13][12] = p2rack[1] } else { starterPosition[13][12] = '.' };
+    if (typeof p2rack[2] !== 'undefined') { starterPosition[13][13] = p2rack[2] } else { starterPosition[13][13] = '.' };
+    if (typeof p2rack[3] !== 'undefined') { starterPosition[12][14] = p2rack[3] } else { starterPosition[12][14] = '.' };
+    if (typeof p2rack[4] !== 'undefined') { starterPosition[14][13] = p2rack[4] } else { starterPosition[14][13] = '.' };
+    if (typeof p2rack[5] !== 'undefined') { starterPosition[13][14] = p2rack[5] } else { starterPosition[13][14] = '.' };
+
     loadPosition(starterPosition, starterPlayer);
-}
 
-function drawRandomElement() {
-    // Draw a tile and delete it from the array.
-    var result = [];
-    var index = Math.floor(Math.random() * tiles.length);
-
-    result.push(tiles[index]);
-    tiles.splice(index, 1);
-
-    return result;
 }
 
 function loadPosition(position, playerToMove) {
@@ -120,6 +124,7 @@ function getPieceImageSource(piece) {
         case 'x': return 'assets/X.png';
         case 'y': return 'assets/Y.png';
         case 'z': return 'assets/Z.png';
+        case ' ': return 'assets/BLANK.png';
         case 'R': return 'assets/pink-rose.png';
     }
 }
@@ -223,20 +228,20 @@ function movePiece(piece, startingPosition, endingPosition) {
 function validateMovement(startingPosition, endingPosition) {
     const boardPiece = curBoard[startingPosition[0]][startingPosition[1]];
     
-    switch (boardPiece) {
-        case 'r':
-        case 'R': return validateRookMovement(startingPosition, endingPosition);
-        case 'n':
-        case 'N': return validateKnightMovement(startingPosition, endingPosition);
-        case 'b':
-        case 'B': return validateBishopMovement(startingPosition, endingPosition);
-        case 'q':
-        case 'Q': return validateQueenMovement(startingPosition, endingPosition);
-        case 'k': 
-        case 'K': return validateKingMovement(startingPosition, endingPosition);
-        case 'p': return validatePawnMovement('white', startingPosition, endingPosition);
-        case 'P': return validatePawnMovement('black', startingPosition, endingPosition);
-    }
+    // switch (boardPiece) {
+    //     case 'r':
+    //     case 'R': return validateRookMovement(startingPosition, endingPosition);
+    //     case 'n':
+    //     case 'N': return validateKnightMovement(startingPosition, endingPosition);
+    //     case 'b':
+    //     case 'B': return validateBishopMovement(startingPosition, endingPosition);
+    //     case 'q':
+    //     case 'Q': return validateQueenMovement(startingPosition, endingPosition);
+    //     case 'k': 
+    //     case 'K': return validateKingMovement(startingPosition, endingPosition);
+    //     case 'p': return validatePawnMovement('white', startingPosition, endingPosition);
+    //     case 'P': return validatePawnMovement('black', startingPosition, endingPosition);
+    // }
 }
 
 function validateBishopMovement(startingPosition, endingPosition) {
